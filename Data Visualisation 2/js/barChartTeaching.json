@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "title": { "text": "Top Universities by Teaching Score" },
+        "data": {
+        "url":
+        "timesData.csv"
+        },
+        "transform": [
+            {"filter": "datum.teaching  >= 95"}
+        ],
+        "mark": "bar",
+        "encoding": {
+        "x": { 
+            "field": "university_name", 
+            "type": "nominal", 
+            "title":"University",
+            "sort": {"encoding":"y", "order": "ascending"}
+         },
+        "y": { 
+            "field": "teaching", 
+            "type": "quantitative", 
+            "title": "Teaching Score"
+         },
+            "color": {
+            "field": "university_name",
+            "type": "nominal"
+        }
+        }
+        }

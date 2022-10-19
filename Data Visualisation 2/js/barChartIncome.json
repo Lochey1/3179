@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Top Universities by Income" },
+    "data": {
+    "url":
+    "timesData.csv"
+    },
+    "transform": [
+        {"filter": "datum.income == 99.9"}
+    ],
+    "mark": "bar",
+    "encoding": {
+    "x": { "field": "university_name", "type": "nominal", "title": "University" },
+    "y": { "field": "income", "type": "quantitative", "title": "Score for Industry Income" },
+    "color": {
+        "field": "university_name",
+        "type": "nominal"
+    }
+    }
+    }

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "University Ranking vs Population",
+    "data": {
+    "url": "timesData.csv"
+    },
+    "mark": "circle",
+    "encoding": {
+    "x": {
+    "field": "num_students",
+    "type": "quantitative",
+    "title": "Population"
+    },
+    "y": {
+    "field": "world_rank",
+    "type": "quantitative",
+    "title": "World ranking"
+    },
+    "color": {
+    "field": "university_name",
+    "type": "nominal"
+    },
+    "size": {
+    "field": "num_students",
+    "type": "quantitative"
+    }
+}
+}

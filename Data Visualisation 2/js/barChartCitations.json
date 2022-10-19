@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "title": { "text": "Top Universities by Citation Score" },
+        "data": {
+        "url":
+        "timesData.csv"
+        },
+        "transform": [
+            {"filter": "datum.citations  == 100"}
+        ],
+        "mark": "bar",
+        "encoding": {
+        "x": { 
+            "field": "university_name", 
+            "type": "nominal", 
+            "title":"University",
+            "sort": {"encoding":"y", "order": "ascending"}
+         },
+        "y": { 
+            "field": "citations", 
+            "type": "quantitative", 
+            "title": "Citations Score"
+         },
+            "color": {
+            "field": "university_name",
+            "type": "nominal"
+        }
+        }
+        }

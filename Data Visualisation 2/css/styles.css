@@ -1,0 +1,29 @@
+body *{
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  h1 {
+    font-weight: 900;
+    margin-top: 35px;
+    text-align: center
+  }
+
+  h2 {
+    background-color: darkred;
+    color: white;
+  }
+  
+  body {
+    background-color: lightcoral;
+  }
+  
+  .page {
+    width: 850px;
+    height: 1900px;
+    background-color: lightgrey ;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+  }
+ 
+  

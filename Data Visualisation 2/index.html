@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <script src="barChartIncome.js"></script>
+  <script src="barChartRanking.js"></script>
+  <script src="scatterPLotRankingVsPop.js"></script>
+  <script src="map.js"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Top Univerisites Around The World</h1>
+        <p>This visualisation shows the top universities around the world based on 5 criteria, Teaching score, International score,
+          International score, citations score and income score. The overall ranking of each univeristy is based on the 5 criteria.
+        </p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Teaching</h2>
+          <p>The teaching criteria is based on the learning environment and the teaching capabilities of the teachers within each 
+            university. The bar chart to the right depicts the top 4 universities in the world in relation to their teaching score.
+            California Institute of Technology (CalTech) ranks the highest, Harvard University ranking second, Standford University 
+            Ranking third and Massachusetts Institute of Technology ranking fourth.
+           </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="Teaching" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="International" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>International</h2>
+          <p>The international outlook criteria is based on each universities diversity of staff, students and research and how they
+            cater for every religion and culture. The bar chart on the left shows top 7 univerisites in relation to the international
+          score. The following Universities ranked the highest with a score of 100, University of Macau, Qatar Univeristy, University of Geneva,
+        University of Hong Kong, University of Innsbruck, University of Luxembourg and London school of Econmonics.  </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Research</h2>
+          <p>The research criteria takes in to account the volume, income and reputation of each universities research. The bar chart to the 
+            displays the top 12 universities based on their research score. Imperial College of London ranks the highest, whereas, California
+            Institute of technology (Caltech) ranks 12. Princeton Univeristy, University of Cambridge, University of California, Brakeley and 
+            Massachusetts Institute of Technology rounds out the top 5.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="Research" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="Citations" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>Citations</h2>
+          <p>The citations criteria is all about each universities research influence citation. The bar chart depicts the top 7 universities 
+            around the world in relation to the citations score. Massachusetts Institute of Technology ranks the highest with Tokyo Metropolitan
+            University ranking second. Princeton University, National Research Nulcear University, Rice University, University of California, 
+            Santa Cruz and St George's University of London all rank tied third.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Income</h2>
+          <p>The income criteria is based on each Universitites Industry Income which is related to thier knowledge transfer. This bar chart shows 
+            the top 9 Universities around the world in relation to their income score. Peking University and KU Leuven ranked the highest, with
+          Swedish University of Agriculture placing third. Eindhoven University of Technology, Nanyang Technological University, National Cheng Kung
+        University, tsinghua University and University of Basel all have the same income score ranking of fourth.</p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="Income" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="Ranking" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>Ranking</h2>
+          <p>The Ranking score takes in to account the scores of the 5 criteria, teaching, international, research, citations and income and ranks
+            each Univeristy in relation to each other. The bar chart displays the top 12  ranked Universities around the world. Imperial College of
+          London Ranks the highest, Princeton University Ranks second and University of Cambridge ranks third. These rankings suggest that not having 
+        the highest score in one criteria relates to a good University ranking. </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Ranking vs Population</h2>
+          <p>The bubble plot to the right shows and compares the ranking of each university to thier corresponding University population. This plot
+            suggests that the highest ranked universities don't always have the highest population, meaning population does not correlate and cause 
+          Universities to have a high University world ranking. </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="scatterPlot" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+  </div> <!-- end page -->
+</body>
+
+</html>

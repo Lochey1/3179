@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "title": { "text": "Top Universities by Research Score" },
+        "data": {
+        "url":
+        "timesData.csv"
+        },
+        "transform": [
+            {"filter": "datum.research  > 98"}
+        ],
+        "mark": "bar",
+        "encoding": {
+        "x": { 
+            "field": "university_name", 
+            "type": "nominal", 
+            "title":"University",
+            "sort": {"encoding":"y", "order": "ascending"}
+         },
+        "y": { 
+            "field": "research", 
+            "type": "quantitative", 
+            "title": "Research Score"
+         },
+            "color": {
+            "field": "university_name",
+            "type": "nominal"
+        }
+        }
+        }

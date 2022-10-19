@@ -1,0 +1,30 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Top Universities by Rank" },
+    "data": {
+    "url":
+    "timesData.csv"
+    },
+    "transform": [
+        {"filter": "datum.world_rank  < 10"}
+    ],
+    "mark": "bar",
+    "encoding": {
+    "x": { 
+        "field": "university_name", 
+        "type": "nominal", 
+        "title":"University",
+        "sort": {"encoding":"y", "order": "ascending"}
+     },
+    "y": { 
+        "field": "world_rank", 
+        "type": "quantitative", 
+        "title": "World Rank"
+     },
+        "color": {
+        "field": "university_name",
+        "type": "nominal"
+    }
+    }
+    }
+    
